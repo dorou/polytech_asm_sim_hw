@@ -1,0 +1,22 @@
+      JMP xx
+      p: DB "22/10" 
+        DB 0	
+        xx:
+	MOV C, p    
+	MOV D, 232	
+	CALL ris
+        HLT            
+        ris:			
+	PUSH A
+	PUSH B
+	MOV B, 0
+        f:
+	MOV A, [C]	
+	MOV [D], A	
+	INC C
+	INC D  
+	CMP B, [C]	
+	JNZ f	
+	POP B
+	POP A
+	RET
