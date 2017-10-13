@@ -1,4 +1,4 @@
-MOV A,22
+  MOV A,22
 MOV B,10
 MOV C,A
 MOV A,B
