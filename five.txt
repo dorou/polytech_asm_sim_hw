@@ -1,0 +1,10 @@
+JMP abc 
+DB 5 
+abc: 
+mov a, 5
+mov b, a
+xyz:
+DEC B
+MUL B
+CMP B,1
+JNE xyz
