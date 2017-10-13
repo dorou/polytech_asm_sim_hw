@@ -1,0 +1,34 @@
+ JMP pf 
+bg: 
+DB "3" 
+DB "7" 
+DB "8" 
+DB "1" 
+DB "2" 
+DB "9" 
+DB 0 
+pf: 
+MOV D, 232 
+MOV C, bg 
+MOV A, [C] 
+MOV [D], A 
+mkr: 
+cmp A, 0 
+JE stop
+CMP A, [C+1] 
+JZ stop 
+JA pai 
+JB paaai 
+pai: 
+inc C 
+MOV A, [C] 
+JMP mkr
+paaai: 
+MOV A, [C+1] 
+MOV [D], A 
+inc C 
+MOV A, [C] 
+JMP mkr 
+
+stop: 
+hlt
